@@ -1,0 +1,17 @@
+#parent-box-black {
+    display: block;
+    width: 75px;
+    height: 75px;
+    
+    border: 1px solid black;
+    background: black;
+}
+
+#parent-box-grey {
+    display: block;
+    width: 75px;
+    height: 75px;
+    
+    border: 1px solid darkgrey;  
+    background: darkgrey;
+}
