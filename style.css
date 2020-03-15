@@ -11,13 +11,14 @@
     display: block;
     width: 75px;
     height: 75px;
-    
+
     border: 1px solid darkgrey;  
     background: darkgrey;
 }
 
 p {
     font-family: 'Baloo Thambi 2';
+    font-style: bold
 }
 
 
