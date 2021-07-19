@@ -1,2 +1,1 @@
-# suryakumar.github.io
-Tech Stack Profile
+Personal Profile maintained in this 'suryakumar.github.io' repository
