@@ -1,571 +1,1163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160652943-1"></script>
-	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Surya Kumar Sundaresan | Senior Java Engineer</title>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Newsreader:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-  		gtag('config', 'UA-160652943-1');
-	</script>
-	<title>Surya Kumar S</title>
-	<link rel="icon" href="./images/favicon.png" type="image/png">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/flexslider.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
+		:root {
+			--primary: #0a0e27;
+			--secondary: #1a1f3a;
+			--accent: #00d4ff;
+			--accent-warm: #ff6b6b;
+			--text: #e0e6ed;
+			--text-muted: #94a3b8;
+			--gradient-start: #0a0e27;
+			--gradient-end: #1a1f3a;
+		}
 
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
+		body {
+			font-family: 'Newsreader', serif;
+			background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+			color: var(--text);
+			line-height: 1.6;
+			overflow-x: hidden;
+		}
 
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+		/* Animated background particles */
+		.bg-particles {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 0;
+			opacity: 0.15;
+		}
 
+		.particle {
+			position: absolute;
+			width: 2px;
+			height: 2px;
+			background: var(--accent);
+			border-radius: 50%;
+			animation: float 20s infinite ease-in-out;
+		}
 
+		@keyframes float {
+			0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+			10% { opacity: 1; }
+			90% { opacity: 1; }
+			100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Navigation */
+		nav {
+			padding: 2rem 0;
+			position: sticky;
+			top: 0;
+			background: rgba(10, 14, 39, 0.9);
+			backdrop-filter: blur(10px);
+			z-index: 100;
+			border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+		}
+
+		nav .container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo {
+			font-family: 'Space Mono', monospace;
+			font-size: 1.2rem;
+			font-weight: 700;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		nav ul {
+			display: flex;
+			gap: 2rem;
+			list-style: none;
+		}
+
+		nav a {
+			color: var(--text-muted);
+			text-decoration: none;
+			font-family: 'Space Mono', monospace;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		nav a::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--accent);
+			transition: width 0.3s ease;
+		}
+
+		nav a:hover {
+			color: var(--accent);
+		}
+
+		nav a:hover::after {
+			width: 100%;
+		}
+
+		/* Hero Section */
+		.hero {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 4rem 0;
+			position: relative;
+		}
+
+		.hero-content {
+			animation: fadeInUp 1s ease-out;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.hero h1 {
+			font-size: clamp(2.5rem, 8vw, 5rem);
+			font-weight: 600;
+			margin-bottom: 1rem;
+			background: linear-gradient(135deg, var(--accent) 0%, #fff 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			line-height: 1.2;
+		}
+
+		.hero .tagline {
+			font-size: clamp(1.2rem, 3vw, 1.8rem);
+			color: var(--text-muted);
+			margin-bottom: 1rem;
+			font-style: italic;
+			font-weight: 300;
+		}
+
+		.hero .subtitle {
+			font-family: 'Space Mono', monospace;
+			font-size: 0.9rem;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom: 3rem;
+		}
+
+		.cta-buttons {
+			display: flex;
+			gap: 1.5rem;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.btn {
+			padding: 1rem 2.5rem;
+			border: 2px solid var(--accent);
+			background: transparent;
+			color: var(--accent);
+			text-decoration: none;
+			font-family: 'Space Mono', monospace;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: var(--accent);
+			transition: left 0.3s ease;
+			z-index: -1;
+		}
+
+		.btn:hover::before {
+			left: 0;
+		}
+
+		.btn:hover {
+			color: var(--primary);
+		}
+
+		.btn-secondary {
+			border-color: var(--text-muted);
+			color: var(--text-muted);
+		}
+
+		.btn-secondary::before {
+			background: var(--text-muted);
+		}
+
+		/* Section Styling */
+		section {
+			padding: 6rem 0;
+			position: relative;
+		}
+
+		.section-title {
+			font-size: clamp(2rem, 5vw, 3.5rem);
+			font-weight: 600;
+			margin-bottom: 1rem;
+			position: relative;
+			display: inline-block;
+		}
+
+		.section-title::after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			width: 60px;
+			height: 3px;
+			background: var(--accent);
+		}
+
+		.section-subtitle {
+			font-family: 'Space Mono', monospace;
+			font-size: 0.9rem;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom: 3rem;
+		}
+
+		/* About Section */
+		.about-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			margin-top: 3rem;
+			align-items: center;
+		}
+
+		.about-text p {
+			margin-bottom: 1.5rem;
+			font-size: 1.1rem;
+			color: var(--text-muted);
+			line-height: 1.8;
+		}
+
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+		}
+
+		.stat-card {
+			background: rgba(255, 255, 255, 0.03);
+			border: 1px solid rgba(0, 212, 255, 0.2);
+			padding: 2rem;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+
+		.stat-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--accent);
+			background: rgba(0, 212, 255, 0.05);
+		}
+
+		.stat-number {
+			font-family: 'Space Mono', monospace;
+			font-size: 3rem;
+			font-weight: 700;
+			color: var(--accent);
+			line-height: 1;
+			margin-bottom: 0.5rem;
+		}
+
+		.stat-label {
+			font-size: 0.9rem;
+			color: var(--text-muted);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		/* Skills Section */
+		.skills-container {
+			margin-top: 3rem;
+		}
+
+		.skill-category {
+			margin-bottom: 3rem;
+		}
+
+		.skill-category h3 {
+			font-family: 'Space Mono', monospace;
+			font-size: 1.2rem;
+			color: var(--accent);
+			margin-bottom: 1.5rem;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		.skill-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+
+		.skill-tag {
+			padding: 0.8rem 1.5rem;
+			background: rgba(0, 212, 255, 0.1);
+			border: 1px solid rgba(0, 212, 255, 0.3);
+			border-radius: 50px;
+			font-family: 'Space Mono', monospace;
+			font-size: 0.85rem;
+			color: var(--text);
+			transition: all 0.3s ease;
+			cursor: default;
+		}
+
+		.skill-tag:hover {
+			background: rgba(0, 212, 255, 0.2);
+			border-color: var(--accent);
+			transform: translateY(-3px);
+		}
+
+		/* Experience Section */
+		.experience-timeline {
+			margin-top: 3rem;
+			position: relative;
+		}
+
+		.timeline-item {
+			position: relative;
+			padding-left: 3rem;
+			margin-bottom: 4rem;
+			border-left: 2px solid rgba(0, 212, 255, 0.3);
+		}
+
+		.timeline-item::before {
+			content: '';
+			position: absolute;
+			left: -6px;
+			top: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: var(--accent);
+			box-shadow: 0 0 20px var(--accent);
+		}
+
+		.job-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+
+		.job-title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: var(--text);
+		}
+
+		.job-period {
+			font-family: 'Space Mono', monospace;
+			font-size: 0.85rem;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.company {
+			font-size: 1.1rem;
+			color: var(--text-muted);
+			margin-bottom: 1rem;
+		}
+
+		.job-description {
+			color: var(--text-muted);
+			margin-bottom: 1.5rem;
+			font-style: italic;
+		}
+
+		.achievements {
+			list-style: none;
+			margin-top: 1rem;
+		}
+
+		.achievements li {
+			position: relative;
+			padding-left: 1.5rem;
+			margin-bottom: 0.8rem;
+			color: var(--text-muted);
+			line-height: 1.6;
+		}
+
+		.achievements li::before {
+			content: '▸';
+			position: absolute;
+			left: 0;
+			color: var(--accent);
+			font-weight: 700;
+		}
+
+		.tech-stack {
+			margin-top: 1.5rem;
+			padding-top: 1.5rem;
+			border-top: 1px solid rgba(0, 212, 255, 0.1);
+		}
+
+		.tech-stack-label {
+			font-family: 'Space Mono', monospace;
+			font-size: 0.75rem;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-bottom: 0.8rem;
+		}
+
+		.tech-list {
+			color: var(--text-muted);
+			font-size: 0.9rem;
+			line-height: 1.6;
+		}
+
+		/* Projects Section */
+		.projects-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			gap: 2rem;
+			margin-top: 3rem;
+		}
+
+		.project-card {
+			background: rgba(255, 255, 255, 0.03);
+			border: 1px solid rgba(0, 212, 255, 0.2);
+			border-radius: 8px;
+			padding: 2.5rem;
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+
+		.project-card:hover {
+			transform: translateY(-10px);
+			border-color: var(--accent);
+			background: rgba(0, 212, 255, 0.05);
+			box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+		}
+
+		.project-icon {
+			font-size: 3rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.project-title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+			color: var(--text);
+		}
+
+		.project-description {
+			color: var(--text-muted);
+			margin-bottom: 1.5rem;
+			line-height: 1.6;
+		}
+
+		.project-metrics {
+			display: flex;
+			gap: 2rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.metric {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.metric-value {
+			font-family: 'Space Mono', monospace;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--accent);
+		}
+
+		.metric-label {
+			font-size: 0.75rem;
+			color: var(--text-muted);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		/* Certifications Section */
+		.certs-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin-top: 3rem;
+		}
+
+		.cert-card {
+			background: rgba(255, 255, 255, 0.03);
+			border: 1px solid rgba(0, 212, 255, 0.2);
+			border-radius: 8px;
+			padding: 2rem;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: flex-start;
+			gap: 1.5rem;
+		}
+
+		.cert-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--accent);
+			background: rgba(0, 212, 255, 0.05);
+		}
+
+		.cert-badge {
+			font-size: 2.5rem;
+			flex-shrink: 0;
+		}
+
+		.cert-info h3 {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			color: var(--text);
+		}
+
+		.cert-issuer {
+			font-size: 0.9rem;
+			color: var(--text-muted);
+		}
+
+		/* Contact Section */
+		.contact-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			margin-top: 3rem;
+			align-items: center;
+		}
+
+		.contact-info {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.contact-item {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+		}
+
+		.contact-icon {
+			width: 50px;
+			height: 50px;
+			background: rgba(0, 212, 255, 0.1);
+			border: 1px solid rgba(0, 212, 255, 0.3);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+			flex-shrink: 0;
+		}
+
+		.contact-details h3 {
+			font-family: 'Space Mono', monospace;
+			font-size: 0.9rem;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 0.3rem;
+		}
+
+		.contact-details a {
+			color: var(--text-muted);
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		.contact-details a:hover {
+			color: var(--accent);
+		}
+
+		.social-links {
+			display: flex;
+			gap: 1.5rem;
+			margin-top: 2rem;
+		}
+
+		.social-link {
+			width: 50px;
+			height: 50px;
+			background: rgba(0, 212, 255, 0.1);
+			border: 1px solid rgba(0, 212, 255, 0.3);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--accent);
+			text-decoration: none;
+			font-size: 1.5rem;
+			transition: all 0.3s ease;
+		}
+
+		.social-link:hover {
+			background: var(--accent);
+			color: var(--primary);
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+		}
+
+		.download-resume {
+			margin-top: 3rem;
+		}
+
+		/* Footer */
+		footer {
+			text-align: center;
+			padding: 3rem 0;
+			border-top: 1px solid rgba(0, 212, 255, 0.1);
+			color: var(--text-muted);
+			font-size: 0.9rem;
+		}
+
+		footer p {
+			font-family: 'Space Mono', monospace;
+		}
+
+		/* Responsive */
+		@media (max-width: 968px) {
+			.about-grid,
+			.contact-grid {
+				grid-template-columns: 1fr;
+				gap: 3rem;
+			}
+
+			.stats-grid {
+				grid-template-columns: 1fr;
+			}
+
+			nav ul {
+				gap: 1rem;
+			}
+
+			.projects-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 640px) {
+			nav ul {
+				display: none;
+			}
+
+			.cta-buttons {
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.btn {
+				width: 100%;
+			}
+
+			.job-header {
+				flex-direction: column;
+			}
+		}
+
+		/* Scroll animations */
+		.fade-in {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+		}
+
+		.fade-in.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
 </head>
-<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+<body>
+<!-- Background particles -->
+<div class="bg-particles" id="particles"></div>
 
+<!-- Navigation -->
+<nav>
+	<div class="container">
+		<div class="logo">SKS</div>
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#certifications">Certifications</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+</nav>
 
-
-	<nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
-
-		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-
-			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-portfolio">Skills</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-resume">Experience</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
-				</ul>
+<!-- Hero Section -->
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<p class="subtitle">Senior Backend Engineer</p>
+			<h1>Surya Kumar<br/>Sundaresan</h1>
+			<p class="tagline">Building scalable enterprise systems that process millions of transactions</p>
+			<div class="cta-buttons">
+				<a href="#contact" class="btn">Get In Touch</a>
+				<a href="#projects" class="btn btn-secondary">View Work</a>
 			</div>
 		</div>
-	</nav>
+	</div>
+</section>
 
-
-
-
-	<section class="site-hero" style="background-image: url(images/image_1.jpg);" id="section-home" data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row intro-text align-items-center justify-content-center">
-				<div class="col-md-10 text-center pt-5">
-					<h1 class="site-heading site-animate"><strong class="d-block">Surya Kumar S</strong></h1>
-					<strong class="d-block text-white text-uppercase letter-spacing">Backend Stack - Core Java, Spring Boot and Microservices</strong>
-
-				</div>
-			</div>
-		</div>
-	</section> <!-- section -->
-
-
-
-
-
-
-	<section class="site-section" id="section-portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="section-heading text-center col-md-12">
-					<h2><strong>Technical Skills</strong></h2>
-				</div>
-			</div>
-			<div class="filters">
-				<ul>
-					<li class="active" data-filter="*">All</li>
-					<li data-filter=".packaging">Programming</li>
-					<li data-filter=".mockup">Framework</li>
-					<li data-filter=".typography">Database</li>
-					<li data-filter=".photography">Tools</li>
-				</ul>
-			</div>
-
-			<div class="filters-content">
-				<div class="row grid">
-					<div class="single-portfolio col-sm-4 all packaging">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p1.jpg" alt="">
-							</div>
-							<a href="images/p1.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Core Java</h4>
-							<div class="cat">Version 8 & 11</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p2.jpg" alt="">
-							</div>
-							<a href="images/p2.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Spring Boot</h4>
-							<div class="cat">Version 2+</div>
-						</div>                                         
-					</div>                            
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p3.jpg" alt="">
-							</div>
-							<a href="images/p3.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a> 
-
-						</div>
-						<div class="p-inner">
-							<h4>PostgreSQL</h4>
-							<div class="cat">Version 9.6, 10.6</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p4.jpg" alt="">
-							</div>
-							<a href="images/p4.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div> 
-						<div class="p-inner">
-							<h4>MS SQL Server</h4>
-							<div class="cat">Version 2014, 2016</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p5.jpg" alt="">
-							</div>
-							<a href="images/p5.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Timescale</h4>
-							<div class="cat">Version 1.2</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p6.jpg" alt="">
-							</div>
-							<a href="images/p6.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Mongo Database</h4>
-							<div class="cat">Version 4+</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p7.jpg" alt="">
-							</div>
-							<a href="images/p7.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Redis Cache</h4>
-							<div class="cat">Version 3+</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p8.jpg" alt="">
-							</div>
-							<a href="images/p8.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Couch DB</h4>
-							<div class="cat">Version 2+</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p9.jpg" alt="">
-							</div>
-							<a href="images/p9.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Eclipse IDE</h4>
-							<div class="cat">Version 2020-03</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p10.jpg" alt="">
-							</div>
-							<a href="images/p10.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>STS IDE</h4>
-							<div class="cat">Version 4+</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p11.jpg" alt="">
-							</div>
-							<a href="images/p11.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Graphite Dashboard</h4>
-							<div class="cat">Version 1.1+</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p12.jpg" alt="">
-							</div>
-							<a href="images/p12.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Kubernetes</h4>
-							<div class="cat">Version 1.17, 1.18</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p13.jpg" alt="">
-							</div>
-							<a href="images/p13.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Jenkins</h4>
-							<div class="cat">Version 2+</div>
-						</div>                                         
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p14.jpg" alt="">
-							</div>
-							<a href="images/p14.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Atlassian</h4>
-							<div class="cat">Confluence & JIRA</div>
-						</div>                                         
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- .section -->
-
-	
-	<section class="site-section " id="section-resume">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2><strong>Education & Work Experience</strong></h2>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<h2 class="mb-5">Education</h2>
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> 2012 - 2014</span>
-						<h3>Master of Engineering</h3>
-						<p>Software Engineering</p>
-					</div>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> 2008 - 2012</span>
-						<h3>Bachelor of Engineering</h3>
-						<p>Computer Science & Engineering</p>
-						<!-- <span class="school">New York University</span> -->
-					</div>
-
-				</div>
-				<div class="col-md-6">
-
-
-					<h2 class="mb-5">Work Experience</h2>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> Dec'19 - Present</span>
-						<h3>Senior Consultant</h3>
-						<span class="school">Mercedes Benz Research and Development, India</span>
-					</div>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> Nov'14 - Nov'19</span>
-						<h3>Technology Analyst</h3>
-						<span class="school">Infosys Limited, India</span>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section> <!-- .section -->
-
-	<section class="site-section" id="section-about">
-		<div class="container">
-			<div class="row mb-5 align-items-center">
-				<div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-					<img src="images/image_1.jpg" alt="Image placeholder" class="img-fluid">
-				</div>
-				<div class="col-lg-5 pl-lg-5">
-					<div class="section-heading">
-						<h2>About <strong>Me</strong></h2>
-					</div>
-					<p class="lead">Software Engineer - Experienced in working with web application projects based on Core Java, Spring frameworks (Spring Boot, MicroServices, AOP, Core)</p>
-					<p class="mb-5  ">Favorite Quote : Ordinary People do process their Data into Information. Extra Ordinary People do process their Data into Information and Insights too </p>
-					<p class="mb-5  ">GitHub Contribution : <a href="https://github.com/suryakumar-s?tab=repositories" target="_blank">https://github.com/suryakumar-s</a></p>
-
-					<p>
-						<center><a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Contact Me</a> </center>
-					</p>
-				</div>
-			</div>
-
-
-		</div>
-	</section>
-
-	<section class="site-section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-md-12">
-					<div class="section-heading text-center">
-						<h2>Client <strong>Testimonial</strong></h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-
-					<div class="block-47 d-flex mb-5">
-						<div class="block-47-image">
-							<img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
-						</div>
-						<blockquote class="block-47-quote">
-							<p>&ldquo;Thanks Gokulan for monitoring the Graphite Dashboard and sharing us the heat map of our Production Servers during US Holiday season. I would like to share this approach with other teams.&rdquo;</p>
-							<cite class="block-47-quote-author">Product Manager,</cite>
-							<p><a href="https://www.sears.com/" target="_blank">Sears Corporation, Hoffmann Estates</a></p>
-						</blockquote>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-
-					<div class="block-47 d-flex mb-5">
-						<div class="block-47-image">
-							<img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
-						</div>
-						<blockquote class="block-47-quote">
-							<p>&ldquo;Hi Gokulan, You are really quick in adapting yourself to our project and business needs. Thanks a ton for helping us in migrating the data from Tibco to MS SQL Server just in 3 months&rdquo;</p>
-							
-							<cite class="block-47-quote-author">Technical Solutions Architect,</cite>
-							<p><a href="https://www.hkjc.com/home/english/index.aspx" target="_blank">The HongKong Jockey Club, HongKong</a></p>
-						</blockquote>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-
-					<div class="block-47 d-flex mb-5">
-						<div class="block-47-image">
-							<img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
-						</div>
-						<blockquote class="block-47-quote">
-							<p>&ldquo;You are very perfect in implementing the solutions in our Backend Systems.&rdquo;</p>
-							
-							<cite class="block-47-quote-author">Engineering Manager,</cite>
-							<p><a href="https://www.cooperlighting.com/" target="_blank">Cooper Lightings, Canada</a></p>
-						</blockquote>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-
-					<div class="block-47 d-flex mb-5">
-						<div class="block-47-image">
-							<img src="images/person_4.jpg" alt="Image placeholder" class="img-fluid">
-						</div>
-						<blockquote class="block-47-quote">
-							<p>&ldquo;So far, I have seen many folks who are very Good in Technical knowledge. But have not seen any technical guy who is also Good in utilizing the Atlassian Confluence product very well for documenting the workflow and business ideas. Keep publishing your ideas through documentations as you do always! &rdquo;</p>
-							
-							<cite class="block-47-quote-author">Technical Architect,</cite>
-							<p><a href="https://www.cooperlighting.com/" target="_blank">Cooper Lightings, Canada</a></p>
-						</blockquote>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-
-	<section class="site-section" id="section-contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2>Get <strong>In Touch</strong></h2>
-					</div>
-				</div>
-
-				<!-- <div class="col-md-7 mb-5 mb-md-0">
-					<form action="" class="site-form">
-						<h3 class="mb-5">Get In Touch</h3>
-						<div class="form-group">
-							<input type="text" class="form-control px-3 py-4" placeholder="Your Name">
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control px-3 py-4" placeholder="Your Email">
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control px-3 py-4" placeholder="Your Phone">
-						</div>
-						<div class="form-group mb-5">
-							<textarea class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
-						</div>
-					</form>
-				</div> -->
-				<div class="col-md-5 pl-md-5">
-					
-					<ul class="site-contact-details">
-						<li>
-							<span class="text-uppercase">Email</span>
-							gokulan.viswanathan@gmail.com
-						</li>
-						<li>
-							<span class="text-uppercase">Current Location</span>
-							Bangalore, India<br>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<footer class="site-footer">
-		<div class="container">
-
-			<div class="row mb-5">
-				<p class="col-12 text-center">
-					Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- About Section -->
+<section id="about">
+	<div class="container">
+		<p class="section-subtitle">Get to know me</p>
+		<h2 class="section-title">About Me</h2>
+		<div class="about-grid fade-in">
+			<div class="about-text">
+				<p>
+					I'm a Senior Java Engineer with <strong>9+ years of experience</strong> designing and building scalable enterprise applications for Fortune 500 companies in BFSI, automotive, and ERP sectors.
+				</p>
+				<p>
+					I specialize in <strong>microservices architecture</strong>, <strong>cloud-native solutions</strong>, and <strong>backend optimization</strong>. My work has delivered mission-critical systems for <strong>Citigroup's commodities trading platform</strong> and <strong>Mercedes-Benz's remote diagnostic systems</strong>.
+				</p>
+				<p>
+					From automating trade processing that saves 100+ hours weekly to building ISO-compliant diagnostic platforms serving global dealerships, I focus on creating systems that deliver measurable business impact.
 				</p>
 			</div>
-			
-			<div class="row mb-5">
-				<div class="col-md-12 text-center">
-					<p>
-						<a href="https://github.com/suryakumar-s" target="_blank" class="social-item"><span class="icon-github"></span></a>
-					</p>
+			<div class="stats-grid">
+				<div class="stat-card fade-in">
+					<div class="stat-number">9.5+</div>
+					<div class="stat-label">Years Experience</div>
+				</div>
+				<div class="stat-card fade-in">
+					<div class="stat-number">100+</div>
+					<div class="stat-label">Trades/Day Automated</div>
+				</div>
+				<div class="stat-card fade-in">
+					<div class="stat-number">99.8%</div>
+					<div class="stat-label">System Uptime</div>
+				</div>
+				<div class="stat-card fade-in">
+					<div class="stat-number">500GB+</div>
+					<div class="stat-label">Data Managed</div>
 				</div>
 			</div>
-			
 		</div>
-	</footer>
+	</div>
+</section>
 
+<!-- Skills Section -->
+<section id="skills">
+	<div class="container">
+		<p class="section-subtitle">My Expertise</p>
+		<h2 class="section-title">Technical Skills</h2>
+		<div class="skills-container fade-in">
+			<div class="skill-category">
+				<h3>Languages & Frameworks</h3>
+				<div class="skill-tags">
+					<span class="skill-tag">Java 8+</span>
+					<span class="skill-tag">Spring Boot</span>
+					<span class="skill-tag">Spring MVC</span>
+					<span class="skill-tag">Microservices</span>
+					<span class="skill-tag">RESTful APIs</span>
+					<span class="skill-tag">JavaScript</span>
+				</div>
+			</div>
+			<div class="skill-category">
+				<h3>Databases</h3>
+				<div class="skill-tags">
+					<span class="skill-tag">PostgreSQL</span>
+					<span class="skill-tag">MongoDB</span>
+					<span class="skill-tag">Oracle</span>
+					<span class="skill-tag">MySQL (Aurora)</span>
+					<span class="skill-tag">Cassandra</span>
+					<span class="skill-tag">Redis</span>
+				</div>
+			</div>
+			<div class="skill-category">
+				<h3>Cloud & DevOps</h3>
+				<div class="skill-tags">
+					<span class="skill-tag">AWS</span>
+					<span class="skill-tag">Docker</span>
+					<span class="skill-tag">Kubernetes</span>
+					<span class="skill-tag">OpenShift</span>
+					<span class="skill-tag">Jenkins</span>
+					<span class="skill-tag">TeamCity</span>
+					<span class="skill-tag">Tekton</span>
+					<span class="skill-tag">Git</span>
+				</div>
+			</div>
+			<div class="skill-category">
+				<h3>Tools & Practices</h3>
+				<div class="skill-tags">
+					<span class="skill-tag">CI/CD</span>
+					<span class="skill-tag">Agile/Scrum</span>
+					<span class="skill-tag">Microservices Design</span>
+					<span class="skill-tag">API Design</span>
+					<span class="skill-tag">System Architecture</span>
+					<span class="skill-tag">Production Support</span>
+					<span class="skill-tag">Kafka</span>
+					<span class="skill-tag">ElasticSearch</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
+<!-- Experience Section -->
+<section id="experience">
+	<div class="container">
+		<p class="section-subtitle">Career Journey</p>
+		<h2 class="section-title">Professional Experience</h2>
+		<div class="experience-timeline fade-in">
+			<!-- Virtusa -->
+			<div class="timeline-item">
+				<div class="job-header">
+					<div>
+						<div class="job-title">Senior Consultant - Technology</div>
+						<div class="company">Virtusa Consulting Services Pvt Ltd | Chennai, India</div>
+					</div>
+					<div class="job-period">June 2021 - Present</div>
+				</div>
+				<p class="job-description">
+					<strong>Client:</strong> Citigroup | <strong>Project:</strong> Commodities Trading STP
+				</p>
+				<ul class="achievements">
+					<li>Engineered automated trade booking service processing broker emails, eliminating manual entry for <strong>100+ daily trades</strong> and reducing booking time from 30 minutes to <strong>under 2 minutes per trade</strong></li>
+					<li>Built secure database archival utility with automated S3 upload, managing <strong>500GB+ of historical trading data</strong> while maintaining FINRA compliance</li>
+					<li>Designed Warrant Cancellation automation, reducing manual intervention by <strong>80%</strong> while ensuring regulatory compliance</li>
+					<li>Developed microservices-based RESTful APIs for commodity exchange integrations with Openlink Endur, handling real-time market data feeds</li>
+					<li>Led production support achieving <strong>99.8% uptime</strong> and resolving critical defects within SLA</li>
+				</ul>
+				<div class="tech-stack">
+					<div class="tech-stack-label">Technologies</div>
+					<div class="tech-list">Java 8, Spring Boot, Microservices, RESTful APIs, OracleDB, Docker, Kubernetes (OpenShift), JMS, AWS, TeamCity, SonarQube</div>
+				</div>
+			</div>
 
+			<!-- IBM -->
+			<div class="timeline-item">
+				<div class="job-header">
+					<div>
+						<div class="job-title">Senior System Engineer</div>
+						<div class="company">IBM India Private Limited | Bengaluru, India</div>
+					</div>
+					<div class="job-period">Dec 2020 - Jun 2021</div>
+				</div>
+				<p class="job-description">
+					<strong>Client:</strong> Mercedes-Benz R&D India | <strong>Project:</strong> Xentry Remote Diagnosis (XRD)
+				</p>
+				<ul class="achievements">
+					<li>Developed B2B diagnostic data services enabling authorized Mercedes-Benz partners to access vehicle diagnostics remotely per <strong>ISO compliance standards</strong></li>
+					<li>Built RESTful microservices for secure vehicle data transmission using Spring Boot and MongoDB, supporting <strong>real-time vehicle health monitoring</strong></li>
+					<li>Deployed containerized applications using Docker and Kubernetes, streamlining deployment processes and improving system reliability</li>
+					<li>Provided L2/L3 production support ensuring <strong>high system availability</strong> for diagnostic operations</li>
+				</ul>
+				<div class="tech-stack">
+					<div class="tech-stack-label">Technologies</div>
+					<div class="tech-list">Java 8, Spring Boot, MongoDB, PostgreSQL, Docker, Kubernetes, Jenkins, GitHub, RESTful APIs</div>
+				</div>
+			</div>
 
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/vendor/popper.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
+			<!-- IVTL -->
+			<div class="timeline-item">
+				<div class="job-header">
+					<div>
+						<div class="job-title">Junior Engineer - Development</div>
+						<div class="company">IVTL Infoview Technologies | Chennai, India</div>
+					</div>
+					<div class="job-period">Sep 2016 - Dec 2020</div>
+				</div>
+				<p class="job-description">
+					<strong>Client:</strong> Works Applications (Japan) | <strong>Project:</strong> HUE AI Works (ERP Suite)
+				</p>
+				<ul class="achievements">
+					<li>Developed backend components for <strong>SCM and HRM modules</strong> serving enterprise clients across manufacturing and services sectors</li>
+					<li>Built microservices architecture using Spring MVC/Spring Boot framework supporting modular ERP functionality for global clients</li>
+					<li>Created custom UI components using XML and JavaScript based on client-specific business requirements</li>
+					<li>Delivered post-deployment support across multiple ERP modules maintaining <strong>high client satisfaction</strong></li>
+				</ul>
+				<div class="tech-stack">
+					<div class="tech-stack-label">Technologies</div>
+					<div class="tech-list">Java 8, Spring MVC, Spring Boot, MySQL, ElasticSearch, RESTful APIs, Jenkins, GitLab, Jasper Reports</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<script src="js/vendor/jquery.easing.1.3.js"></script>
+<!-- Projects Section -->
+<section id="projects">
+	<div class="container">
+		<p class="section-subtitle">Featured Work</p>
+		<h2 class="section-title">Key Projects</h2>
+		<div class="projects-grid">
+			<div class="project-card fade-in">
+				<div class="project-icon">📊</div>
+				<h3 class="project-title">Commodities Trading Platform</h3>
+				<p class="project-description">
+					Automated trading platform connecting global commodity exchanges to Openlink Endur for straight-through processing at Citigroup.
+				</p>
+				<div class="project-metrics">
+					<div class="metric">
+						<div class="metric-value">100+</div>
+						<div class="metric-label">Daily Trades</div>
+					</div>
+					<div class="metric">
+						<div class="metric-value">2 min</div>
+						<div class="metric-label">Processing Time</div>
+					</div>
+				</div>
+				<div class="tech-list">Spring Boot • Microservices • Oracle • Docker • Kubernetes</div>
+			</div>
 
-	<script src="js/vendor/jquery.stellar.min.js"></script>
-	<script src="js/vendor/jquery.waypoints.min.js"></script>
+			<div class="project-card fade-in">
+				<div class="project-icon">🚗</div>
+				<h3 class="project-title">Remote Diagnostic System</h3>
+				<p class="project-description">
+					ISO-compliant B2B platform enabling Mercedes-Benz partners to access vehicle diagnostic data remotely, improving service efficiency.
+				</p>
+				<div class="project-metrics">
+					<div class="metric">
+						<div class="metric-value">ISO</div>
+						<div class="metric-label">Compliant</div>
+					</div>
+					<div class="metric">
+						<div class="metric-value">Real-time</div>
+						<div class="metric-label">Monitoring</div>
+					</div>
+				</div>
+				<div class="tech-list">Spring Boot • MongoDB • PostgreSQL • Docker • Kubernetes</div>
+			</div>
 
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-	<script src="js/custom.js"></script>
+			<div class="project-card fade-in">
+				<div class="project-icon">📦</div>
+				<h3 class="project-title">Enterprise ERP Suite</h3>
+				<p class="project-description">
+					Microservices-based ERP system for supply chain and HR management serving global enterprise clients across multiple industries.
+				</p>
+				<div class="project-metrics">
+					<div class="metric">
+						<div class="metric-value">Global</div>
+						<div class="metric-label">Deployment</div>
+					</div>
+					<div class="metric">
+						<div class="metric-value">Multi-tenant</div>
+						<div class="metric-label">Architecture</div>
+					</div>
+				</div>
+				<div class="tech-list">Spring MVC • MySQL • ElasticSearch • Microservices</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<!-- Google Map -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    	<script src="js/google-map.js"></script> -->
+<!-- Certifications Section -->
+<section id="certifications">
+	<div class="container">
+		<p class="section-subtitle">Credentials</p>
+		<h2 class="section-title">Certifications</h2>
+		<div class="certs-grid">
+			<div class="cert-card fade-in">
+				<div class="cert-badge">☁️</div>
+				<div class="cert-info">
+					<h3>AWS Certified Solutions Architect</h3>
+					<p class="cert-issuer">Amazon Web Services - Associate Level</p>
+				</div>
+			</div>
+			<div class="cert-card fade-in">
+				<div class="cert-badge">☁️</div>
+				<div class="cert-info">
+					<h3>Microsoft Certified Azure Fundamentals</h3>
+					<p class="cert-issuer">Microsoft Azure</p>
+				</div>
+			</div>
+			<div class="cert-card fade-in">
+				<div class="cert-badge">☕</div>
+				<div class="cert-info">
+					<h3>Oracle Certified Associate</h3>
+					<p class="cert-issuer">Java SE 8 Programmer</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    </body>
-    </html>
+<!-- Contact Section -->
+<section id="contact">
+	<div class="container">
+		<p class="section-subtitle">Let's Connect</p>
+		<h2 class="section-title">Get In Touch</h2>
+		<div class="contact-grid fade-in">
+			<div class="contact-info">
+				<div class="contact-item">
+					<div class="contact-icon">📧</div>
+					<div class="contact-details">
+						<h3>Email</h3>
+						<a href="mailto:suryakumar095@gmail.com">suryakumar095@gmail.com</a>
+					</div>
+				</div>
+				<div class="contact-item">
+					<div class="contact-icon">📱</div>
+					<div class="contact-details">
+						<h3>Phone</h3>
+						<a href="tel:+919790841162">(+91) 9790841162</a>
+					</div>
+				</div>
+				<div class="contact-item">
+					<div class="contact-icon">📍</div>
+					<div class="contact-details">
+						<h3>Location</h3>
+						<p>Chennai, Tamil Nadu, India</p>
+					</div>
+				</div>
+				<div class="social-links">
+					<a href="https://www.linkedin.com/in/suryakumar95" target="_blank" class="social-link" title="LinkedIn">in</a>
+					<a href="mailto:suryakumar095@gmail.com" class="social-link" title="Email">@</a>
+				</div>
+			</div>
+			<div class="download-resume">
+				<p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">
+					Looking for my resume? Download a copy to learn more about my experience and technical expertise.
+				</p>
+				<a href="#" class="btn" style="display: inline-block;">Download Resume (PDF)</a>
+				<p style="color: var(--text-muted); margin-top: 2rem; font-size: 0.9rem; font-style: italic;">
+					Open to opportunities in backend engineering, microservices architecture, and cloud-native development.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<p>&copy; 2026 Surya Kumar Sundaresan. Built with passion for clean code and scalable systems.</p>
+	</div>
+</footer>
+
+<script>
+	// Create animated background particles
+	function createParticles() {
+		const particlesContainer = document.getElementById('particles');
+		const particleCount = 50;
+
+		for (let i = 0; i < particleCount; i++) {
+			const particle = document.createElement('div');
+			particle.className = 'particle';
+			particle.style.left = Math.random() * 100 + '%';
+			particle.style.animationDelay = Math.random() * 20 + 's';
+			particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+			particlesContainer.appendChild(particle);
+		}
+	}
+
+	// Smooth scroll for navigation
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			const target = document.querySelector(this.getAttribute('href'));
+			if (target) {
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+		});
+	});
+
+	// Intersection Observer for fade-in animations
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -100px 0px'
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+			}
+		});
+	}, observerOptions);
+
+	document.querySelectorAll('.fade-in').forEach(el => {
+		observer.observe(el);
+	});
+
+	// Initialize
+	createParticles();
+
+	// Add active nav state on scroll
+	window.addEventListener('scroll', () => {
+		const sections = document.querySelectorAll('section[id]');
+		const scrollY = window.pageYOffset;
+
+		sections.forEach(section => {
+			const sectionHeight = section.offsetHeight;
+			const sectionTop = section.offsetTop - 100;
+			const sectionId = section.getAttribute('id');
+			const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				document.querySelectorAll('nav a').forEach(link => {
+					link.style.color = 'var(--text-muted)';
+				});
+				if (navLink) {
+					navLink.style.color = 'var(--accent)';
+				}
+			}
+		});
+	});
+</script>
+</body>
+</html>
